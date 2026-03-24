@@ -1,23 +1,23 @@
 :root {
-    /* Premium Glassmorphism Theme (Dark) */
-    --bg-dark: #0f111a;
-    --glass-bg: rgba(26, 30, 46, 0.45);
-    --glass-border: rgba(255, 255, 255, 0.08);
-    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.35);
+    /* Premium Glassmorphism Theme (Pink & White Light) */
+    --bg-dark: #fdf2f8; /* Soft pink-white background */
+    --glass-bg: rgba(255, 255, 255, 0.75);
+    --glass-border: rgba(255, 255, 255, 0.5);
+    --glass-shadow: 0 8px 32px 0 rgba(236, 72, 153, 0.08);
     
     /* Accents */
-    --accent-primary: #8b5cf6; /* Vibrant Purple */
-    --accent-hover: #7c3aed;
-    --accent-secondary: #06b6d4; /* Cyan */
+    --accent-primary: #ec4899; /* Beautiful Pink */
+    --accent-hover: #db2777; /* Darker Pink */
+    --accent-secondary: #f472b6; /* Light Pink */
     
     /* Typography */
-    --text-primary: #f8fafc;
-    --text-secondary: #94a3b8;
+    --text-primary: #1e1b4b; /* Deep Indigo for clear contrast */
+    --text-secondary: #64748b; /* Slate grey */
     --font-family: 'Outfit', sans-serif;
 
     /* Message Bubbles */
-    --msg-user: rgba(139, 92, 246, 0.85); /* Purple tint */
-    --msg-bot: rgba(30, 41, 59, 0.85); /* Slate tint */
+    --msg-user: rgba(252, 231, 243, 0.9); /* Very light pink tint */
+    --msg-bot: rgba(255, 255, 255, 0.95); /* Solid white */
     
     /* Spacing & Borders */
     --radius-lg: 16px;
@@ -32,8 +32,8 @@ body {
     background-color: var(--bg-dark);
     /* Aesthetic mesh gradient background */
     background-image: 
-        radial-gradient(at 0% 0%, rgba(139, 92, 246, 0.15) 0px, transparent 50%),
-        radial-gradient(at 100% 100%, rgba(6, 182, 212, 0.15) 0px, transparent 50%);
+        radial-gradient(at 0% 0%, rgba(244, 114, 182, 0.25) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(253, 164, 175, 0.25) 0px, transparent 50%);
     background-attachment: fixed;
     color: var(--text-primary);
     overflow: hidden;
@@ -118,15 +118,15 @@ body {
 }
 
 .nav-btn:hover {
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(236, 72, 153, 0.05); /* Pink tint */
     color: var(--text-primary);
 }
 
 .nav-btn.active {
-    background: rgba(139, 92, 246, 0.15);
-    border-color: rgba(139, 92, 246, 0.3);
+    background: rgba(236, 72, 153, 0.1);
+    border-color: rgba(236, 72, 153, 0.2);
     color: var(--text-primary);
-    box-shadow: inset 2px 0 0 0 var(--accent-primary);
+    box-shadow: inset 3px 0 0 0 var(--accent-primary);
 }
 
 .settings-btn { margin-top: auto; }
@@ -219,13 +219,13 @@ body {
 .user-msg .msg-content {
     background: var(--msg-user);
     border-radius: var(--radius-lg) var(--radius-lg) 0 var(--radius-lg);
-    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.2);
+    box-shadow: 0 4px 15px rgba(236, 72, 153, 0.1);
 }
 
 .bot-msg .msg-content {
     background: var(--msg-bot);
     border-radius: var(--radius-lg) var(--radius-lg) var(--radius-lg) 0;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 /* Skeleton Loaders (Images) & Typing Elements */
@@ -256,7 +256,7 @@ body {
 /* Skeleton animation */
 .skeleton {
     width: 100%; height: 350px;
-    background: linear-gradient(90deg, rgba(255,255,255,0.03) 25%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.03) 75%);
+    background: linear-gradient(90deg, #fce7f3 25%, #fbcfe8 50%, #fce7f3 75%);
     background-size: 200% 100%;
     animation: skeletonShimmer 1.5s infinite;
     border-radius: var(--radius-sm);
@@ -306,7 +306,7 @@ textarea::placeholder { color: var(--text-secondary); }
 /* Settings Modal */
 .modal-overlay {
     position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(6px);
+    background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(8px);
     display: flex; justify-content: center; align-items: center;
     z-index: 1000; opacity: 0; pointer-events: none; transition: opacity 0.3s;
 }
@@ -327,7 +327,7 @@ textarea::placeholder { color: var(--text-secondary); }
 .form-group label { display: block; margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: 500; }
 .form-group input { 
     width: 100%; padding: 0.85rem 1rem; 
-    background: rgba(0, 0, 0, 0.3); border: 1px solid var(--glass-border); 
+    background: rgba(255, 255, 255, 0.8); border: 1px solid rgba(236, 72, 153, 0.2); 
     border-radius: var(--radius-sm); color: var(--text-primary); font-family: inherit; font-size: 1rem; outline: none; 
     transition: border-color 0.2s;
 }
@@ -339,7 +339,7 @@ textarea::placeholder { color: var(--text-secondary); }
 /* Tooltip / Toast */
 .toast {
     position: fixed; bottom: 2rem; right: 2rem;
-    background: var(--text-primary); color: var(--bg-dark);
+    background: var(--accent-primary); color: #ffffff;
     padding: 1rem 1.5rem; border-radius: var(--radius-sm);
     box-shadow: 0 4px 20px rgba(0,0,0,0.5); font-weight: 600; z-index: 10000;
     transform: translateY(150%); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -354,8 +354,8 @@ textarea::placeholder { color: var(--text-secondary); }
 /* Scrollbars */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.15); border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.25); }
+::-webkit-scrollbar-thumb { background: rgba(236, 72, 153, 0.2); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(236, 72, 153, 0.4); }
 
 /* Responsive Media Queries */
 @media (max-width: 768px) {

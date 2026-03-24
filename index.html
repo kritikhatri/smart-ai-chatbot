@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="dashboard-layout">
         <!-- Sidebar Navigation -->
@@ -16,7 +18,7 @@
                 <div class="logo">✨ AI Dash</div>
                 <button class="mobile-close" id="btn-close-sidebar">✕</button>
             </div>
-            
+
             <nav class="sidebar-nav">
                 <button class="nav-btn active" data-view="chat-view">
                     <span class="icon">💬</span> Chat Assistant
@@ -25,7 +27,7 @@
                     <span class="icon">🎨</span> Image Studio
                 </button>
             </nav>
-            
+
             <div class="sidebar-footer">
                 <button class="nav-btn settings-btn" id="btn-open-settings">
                     <span class="icon">⚙️</span> API Settings
@@ -43,22 +45,23 @@
 
             <!-- Container for Tabbed Views -->
             <div class="view-container">
-                
+
                 <!-- 1. Text Chat View -->
                 <section id="chat-view" class="view active">
                     <div class="view-header">
                         <h2>Chat Assistant</h2>
-                        <p>Powered by OpenRouter (Mistral 7B)</p>
+                        <p>Powered by OpenRouter (Auto-Routed Free Tier)</p>
                     </div>
-                    
+
                     <div class="chat-area" id="chat-messages">
                         <!-- Welcome Message -->
                         <div class="message bot-msg">
-                            <div class="msg-content">Hello developer. Welcome to the workspace. Please configure your API keys in the settings menu below before starting!</div>
+                            <div class="msg-content">Hello developer. Welcome to the workspace. Please configure your
+                                API keys in the settings menu below before starting!</div>
                         </div>
                         <!-- Dynamic Messages Appear Here -->
                     </div>
-                    
+
                     <div class="input-area">
                         <textarea id="chat-input" placeholder="Type your multi-tool prompt..." rows="1"></textarea>
                         <button class="action-btn" id="btn-send-chat">Send</button>
@@ -71,16 +74,17 @@
                         <h2>Image Studio</h2>
                         <p>Powered by Hugging Face (Stable Diffusion XL)</p>
                     </div>
-                    
+
                     <div class="image-area" id="image-gallery">
                         <div class="empty-state" id="image-empty-state">
                             <div class="empty-icon">🖼️</div>
                             <p>Your high-fidelity generated images will line up here.</p>
                         </div>
                     </div>
-                    
+
                     <div class="input-area">
-                        <textarea id="image-input" placeholder="Describe the image you want to conjure..." rows="1"></textarea>
+                        <textarea id="image-input" placeholder="Describe the image you want to conjure..."
+                            rows="1"></textarea>
                         <button class="action-btn" id="btn-generate-image">Generate</button>
                     </div>
                 </section>
@@ -96,9 +100,10 @@
                 <h2>API Integration Keys</h2>
                 <button class="close-modal" id="btn-close-modal">✕</button>
             </div>
-            
+
             <div class="modal-body">
-                <p class="modal-desc">These exact credentials are never saved on any server. They remain strictly encrypted within your local browser storage via LocalStorage protocols.</p>
+                <p class="modal-desc">These exact credentials are never saved on any server. They remain strictly
+                    encrypted within your local browser storage via LocalStorage protocols.</p>
                 <form id="settings-form" onsubmit="event.preventDefault();">
                     <div class="form-group">
                         <label for="openrouter-key">OpenRouter API Key (Chat)</label>
@@ -110,7 +115,7 @@
                     </div>
                 </form>
             </div>
-            
+
             <div class="modal-footer">
                 <button class="action-btn save-btn" id="btn-save-settings">Save configuration</button>
             </div>
@@ -122,4 +127,5 @@
 
     <script src="app.js"></script>
 </body>
+
 </html>

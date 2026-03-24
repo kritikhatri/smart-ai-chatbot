@@ -184,7 +184,7 @@ async function processChat(retryPrompt = null) {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                model: "mistralai/mistral-7b-instruct",
+                model: "openrouter/free",
                 messages: state.chatContext
             })
         });
@@ -252,7 +252,7 @@ async function processImageGen(retryPrompt = null) {
     const skeletonEl = appendImageSkeleton(query);
 
     try {
-        const req = await fetch("https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-xl-base-1.0", {
+        const req = await fetch("https://router.huggingface.co/hf-inference/models/stabilityai/stable-diffusion-xl-base-1.0", {
             method: "POST",
             headers: {
                 "Authorization": `Bearer ${state.keys.huggingface}`,
@@ -261,9 +261,9 @@ async function processImageGen(retryPrompt = null) {
             body: JSON.stringify({ inputs: query })
         });
 
-        if (!req.ok) throw new Error(`Model Error ${req.status}. The model might be loading...`);
+        if (!req.ok) throw new Error(`Model Error ${req.status}. The model might be loading or token might be missing permissions...`);
         
-        // Blob handling magic
+        // Blob handling magic perfectly matches your UI requirements
         const binaryBlob = await req.blob();
         const cachedUrl = URL.createObjectURL(binaryBlob);
 
